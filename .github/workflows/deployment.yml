@@ -1,8 +1,8 @@
-name: Test Project
+name: Deployment
 
-on: push # Poderíamos escolher até em qual branch vamos executar, neste caso esta executando em qualquer branch.
+on: push
 
-jobs: # no plural sempre
+jobs:
   test:
 
     runs-on: ubuntu-latest
