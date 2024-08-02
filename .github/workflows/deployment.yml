@@ -1,0 +1,46 @@
+name: Test Project
+
+on: push # Poderíamos escolher até em qual branch vamos executar, neste caso esta executando em qualquer branch.
+
+jobs: # no plural sempre
+  test:
+
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Get Code
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+
+      - name: Install dependênces
+        run: npm ci
+
+      - name: Run Tests 
+        run: npm test
+        
+  deploy:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code 
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+
+      - name: Install dependênces
+        run: npm ci 
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy
+        run: echo "Deploying somewhere..." 
+
+        
