@@ -1,0 +1,25 @@
+# Nome desse workflow
+name: First Workflow
+
+# Quando ele irá acontecer. Em quais eventos será disparado.
+on: workflow_dispatch # Este tipo definir que precisará ser manualmente disparado.
+
+# Aqui o bloco de jobs
+jobs: # no plural sempre
+    # Bloco do primeiro job já define o nome do job.
+  first-job:
+    # Define qual o ambiente será executados os steps deste job
+    runs-on: ubuntu-latest
+
+    # Nossa lista de steps
+    steps:
+
+      - name: First Step
+        # Comando do primeiro step
+        run: echo Hello, world!
+
+      # Para definir uma sequência de comando use como definido abaixo
+      - name: second Step
+        run: |
+          cat /etc/os-release
+          echo "\n ### Done - Bye ###"
