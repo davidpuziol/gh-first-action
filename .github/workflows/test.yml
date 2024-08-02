@@ -3,7 +3,7 @@ name: Test Project
 on: push # Poderíamos escolher até em qual branch vamos executar, neste caso esta executando em qualquer branch.
 
 jobs: # no plural sempre
-  first-job:
+  test:
 
     runs-on: ubuntu-latest
     steps:
